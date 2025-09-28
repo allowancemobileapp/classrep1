@@ -7,18 +7,21 @@ const collaborators = [
       "https://pjabgadtwtszzljyzvdt.supabase.co/storage/v1/object/public/public-downloads/partyanimal.png",
     handle: "@partyanimal",
     name: "Party Animal",
+    description: "all party updates and events",
   },
   {
     imageUrl:
       "https://pjabgadtwtszzljyzvdt.supabase.co/storage/v1/object/public/public-downloads/sportyanimal.png",
     handle: "@sportyanimal",
     name: "Sporty Animal",
+    description: "free tickets and sporty bet updates",
   },
   {
     imageUrl:
       "https://pjabgadtwtszzljyzvdt.supabase.co/storage/v1/object/public/public-downloads/soundanimal.png",
     handle: "@soundanimal",
     name: "Sound Animal",
+    description: "back to back music and podcast updates",
   },
 ];
 
@@ -52,6 +55,9 @@ export function Collaborators() {
               />
               <p className="w-32 text-base font-medium tracking-wide text-foreground/90">
                 {collab.handle}
+              </p>
+              <p className="w-36 text-xs text-muted-foreground">
+                {collab.description}
               </p>
             </div>
           ))}
