@@ -105,8 +105,12 @@ export function AppPlatforms() {
       title: "Download Started",
       description: "Hold tight, your download is starting...",
     });
-    // Placeholder for actual download logic
-    console.log("Downloading for Android...");
+    const link = document.createElement('a');
+    link.href = 'https://github.com/allowancemobileapp/classrep/releases/download/v1.0.0/Class-Rep-v2.apk';
+    link.setAttribute('download', 'Class-Rep-v2.apk');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
     const handleAndroidCancel = () => {
