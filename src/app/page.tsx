@@ -9,6 +9,7 @@ import { InteractiveScreenshot } from "@/components/cosmic/interactive-screensho
 import { useState } from "react";
 import WelcomeScreen from "@/components/cosmic/welcome-screen";
 import { AnimatePresence } from "framer-motion";
+import { Collaborators } from "@/components/cosmic/collaborators";
 
 export default function Home() {
   const [showWelcome, setShowWelcome] = useState(true);
@@ -59,6 +60,8 @@ export default function Home() {
         </section>
 
         <InteractiveScreenshot />
+
+        <Collaborators />
 
         <section
           id="waitlist"
