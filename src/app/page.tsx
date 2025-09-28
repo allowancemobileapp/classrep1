@@ -6,14 +6,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { AppPlatforms } from "@/components/cosmic/app-platforms";
 import { InteractiveScreenshot } from "@/components/cosmic/interactive-screenshot";
-import { useState, useActionState } from "react";
+import { useState, useActionState, useEffect } from "react";
 import WelcomeScreen from "@/components/cosmic/welcome-screen";
 import { AnimatePresence } from "framer-motion";
 import { Collaborators } from "@/components/cosmic/collaborators";
 import { useFormStatus } from "react-dom";
 import { addToWaitlist } from "./actions";
 import { useToast } from "@/hooks/use-toast";
-import { useEffect } from "react";
 
 function WaitlistForm() {
   const [state, formAction] = useActionState(addToWaitlist, null);
@@ -21,15 +20,20 @@ function WaitlistForm() {
   const { toast } = useToast();
 
   useEffect(() => {
-    if (state?.success) {
+    if (!state) return;
+
+    if (state.success) {
       toast({
         title: "Success!",
         description: state.message,
       });
-    } else if (state?.error) {
-        const errorMessage = typeof state.message === 'object' 
-        ? Object.values(state.message).flat().join(', ')
-        : state.error;
+    } else if (state.error) {
+      // Handle both validation errors (object) and other errors (string)
+      const errorMessage =
+        typeof state.message === "object"
+          ? Object.values(state.message).flat().join(", ")
+          : state.error;
+
       toast({
         title: "Oops!",
         description: errorMessage,
