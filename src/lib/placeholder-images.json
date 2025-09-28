@@ -23,6 +23,42 @@
       "description": "Background image for the welcome screen",
       "imageUrl": "https://pjabgadtwtszzljyzvdt.supabase.co/storage/v1/object/public/public-downloads/TAP.jpg",
       "imageHint": "cosmic space background tap"
+    },
+    {
+      "id": "screenshot-1",
+      "description": "App screenshot 1",
+      "imageUrl": "https://pjabgadtwtszzljyzvdt.supabase.co/storage/v1/object/public/public-downloads/001.jpg",
+      "imageHint": "app screen"
+    },
+    {
+      "id": "screenshot-2",
+      "description": "App screenshot 2",
+      "imageUrl": "https://pjabgadtwtszzljyzvdt.supabase.co/storage/v1/object/public/public-downloads/002.jpg",
+      "imageHint": "app screen"
+    },
+    {
+      "id": "screenshot-3",
+      "description": "App screenshot 3",
+      "imageUrl": "https://pjabgadtwtszzljyzvdt.supabase.co/storage/v1/object/public/public-downloads/003.jpg",
+      "imageHint": "app screen"
+    },
+    {
+      "id": "screenshot-4",
+      "description": "App screenshot 4",
+      "imageUrl": "https://pjabgadtwtszzljyzvdt.supabase.co/storage/v1/object/public/public-downloads/004.jpg",
+      "imageHint": "app screen"
+    },
+    {
+      "id": "screenshot-5",
+      "description": "App screenshot 5",
+      "imageUrl": "https://pjabgadtwtszzljyzvdt.supabase.co/storage/v1/object/public/public-downloads/005.jpg",
+      "imageHint": "app screen"
+    },
+    {
+      "id": "screenshot-6",
+      "description": "App screenshot 6",
+      "imageUrl": "https://pjabgadtwtszzljyzvdt.supabase.co/storage/v1/object/public/public-downloads/006.jpg",
+      "imageHint": "app screen"
     }
   ]
 }

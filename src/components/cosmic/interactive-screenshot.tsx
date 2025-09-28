@@ -6,9 +6,13 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const screenshotImages = [
-  PlaceHolderImages.find((p) => p.id === "get-started"),
-  PlaceHolderImages.find((p) => p.id === "tap-anywhere"),
-].filter(Boolean);
+  "screenshot-1",
+  "screenshot-2",
+  "screenshot-3",
+  "screenshot-4",
+  "screenshot-5",
+  "screenshot-6",
+].map(id => PlaceHolderImages.find((p) => p.id === id)).filter(Boolean);
 
 export function InteractiveScreenshot() {
   const [currentIndex, setCurrentIndex] = useState(0);
