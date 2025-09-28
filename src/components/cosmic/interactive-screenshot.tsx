@@ -3,7 +3,7 @@
 
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const screenshotImages = [
@@ -18,8 +18,17 @@ const screenshotImages = [
 export function InteractiveScreenshot() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const handleTap = () => {
+  const nextImage = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % screenshotImages.length);
+  }, []);
+
+  useEffect(() => {
+    const intervalId = setInterval(nextImage, 3000);
+    return () => clearInterval(intervalId);
+  }, [nextImage]);
+
+  const handleTap = () => {
+    nextImage();
   };
 
   const currentImage = screenshotImages[currentIndex];
