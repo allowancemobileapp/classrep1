@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from "next/image";
@@ -28,12 +27,7 @@ function WaitlistForm() {
         description: state.message,
       });
     } else if (state.error) {
-      // Handle both validation errors (object) and other errors (string)
-      const errorMessage =
-        typeof state.message === "object"
-          ? Object.values(state.message).flat().join(", ")
-          : state.error;
-
+      const errorMessage = state.error;
       toast({
         title: "Oops!",
         description: errorMessage,
@@ -70,6 +64,13 @@ function WaitlistForm() {
           className="h-12 bg-background/50 text-center font-bold uppercase tracking-widest placeholder:text-muted-foreground/50"
           aria-label="Your Email"
           required
+        />
+        <Input
+          type="tel"
+          name="phoneNumber"
+          placeholder="WA CONTACT (OPTIONAL)"
+          className="h-12 bg-background/50 text-center font-bold uppercase tracking-widest placeholder:text-muted-foreground/50"
+          aria-label="Your WhatsApp Contact"
         />
         <Button
           type="submit"
