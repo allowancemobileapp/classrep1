@@ -21,8 +21,8 @@
     {
       "id": "welcome-background",
       "description": "Background image for the welcome screen",
-      "imageUrl": "https://pjabgadtwtszzljyzvdt.supabase.co/storage/v1/object/public/public-downloads/welcome_background.png",
-      "imageHint": "cosmic space background"
+      "imageUrl": "https://pjabgadtwtszzljyzvdt.supabase.co/storage/v1/object/public/public-downloads/TAP.jpg",
+      "imageHint": "cosmic space background tap"
     }
   ]
 }
