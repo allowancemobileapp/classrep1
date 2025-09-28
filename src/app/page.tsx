@@ -46,7 +46,7 @@ export default function Home() {
         >
           <h2
             id="hero-heading"
-            className="font-headline text-4xl font-bold uppercase tracking-widest text-glow sm:text-6xl md:text-7xl"
+            className="font-headline text-4xl font-bold uppercase tracking-widest sm:text-6xl md:text-7xl"
           >
             hurry, class don start!
           </h2>
