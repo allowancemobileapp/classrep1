@@ -1,0 +1,166 @@
+"use client";
+
+import { Apple, Bot, Globe } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { useState, useRef, useEffect } from "react";
+import { Progress } from "@/components/ui/progress";
+import { cn } from "@/lib/utils";
+
+const HoldButton = ({
+  onHold,
+  onCancel,
+  children,
+}: {
+  onHold: () => void;
+  onCancel: () => void;
+  children: React.ReactNode;
+}) => {
+  const [isHolding, setIsHolding] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const progressIntervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  const HOLD_DURATION = 5000;
+
+  const startHolding = () => {
+    setIsHolding(true);
+    setProgress(0);
+
+    timerRef.current = setTimeout(() => {
+      onHold();
+      reset();
+    }, HOLD_DURATION);
+
+    progressIntervalRef.current = setInterval(() => {
+      setProgress((p) => {
+        if (p >= 100) {
+          if (progressIntervalRef.current)
+            clearInterval(progressIntervalRef.current);
+          return 100;
+        }
+        return p + 100 / (HOLD_DURATION / 100);
+      });
+    }, 100);
+  };
+
+  const reset = () => {
+    setIsHolding(false);
+    setProgress(0);
+    if (timerRef.current) clearTimeout(timerRef.current);
+    if (progressIntervalRef.current) clearInterval(progressIntervalRef.current);
+  };
+
+  const cancelHolding = () => {
+    onCancel();
+    reset();
+  };
+
+  useEffect(() => {
+    return () => {
+      reset();
+    };
+  }, []);
+
+  return (
+    <div
+      onMouseDown={startHolding}
+      onMouseUp={cancelHolding}
+      onTouchStart={startHolding}
+      onTouchEnd={cancelHolding}
+      className="relative"
+    >
+      {children}
+      <div
+        className={cn(
+          "absolute inset-x-0 bottom-[-8px] transition-opacity duration-300",
+          isHolding ? "opacity-100" : "opacity-0"
+        )}
+      >
+        <Progress value={progress} className="h-1 bg-primary/50" />
+      </div>
+    </div>
+  );
+};
+
+export function AppPlatforms() {
+  const { toast } = useToast();
+
+  const handleIosClick = () => {
+    toast({
+      title: "Coming Soon!",
+      description: "The iOS app is under development. Stay tuned!",
+    });
+  };
+
+  const handleAndroidDownload = () => {
+    toast({
+      title: "Download Started",
+      description: "Hold tight, your download is starting...",
+    });
+    // Placeholder for actual download logic
+    console.log("Downloading for Android...");
+  };
+
+    const handleAndroidCancel = () => {
+    toast({
+      title: "Download Cancelled",
+      variant: "destructive",
+    });
+  };
+
+  return (
+    <TooltipProvider>
+      <div className="mt-4 flex items-center justify-center gap-6">
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <button
+              onClick={handleIosClick}
+              className="group transform transition-transform hover:scale-110"
+            >
+              <Apple className="h-10 w-10 text-foreground/80 transition-colors group-hover:text-primary" />
+              <span className="sr-only">Download for iOS</span>
+            </button>
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>iOS App (Coming Soon)</p>
+          </TooltipContent>
+        </Tooltip>
+
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <a
+              href="#"
+              className="group transform transition-transform hover:scale-110"
+            >
+              <Globe className="h-10 w-10 text-foreground/80 transition-colors group-hover:text-primary" />
+              <span className="sr-only">Open Web App</span>
+            </a>
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>Web App</p>
+          </TooltipContent>
+        </Tooltip>
+
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <HoldButton onHold={handleAndroidDownload} onCancel={handleAndroidCancel}>
+              <div className="group transform transition-transform hover:scale-110 cursor-pointer">
+                <Bot className="h-10 w-10 text-foreground/80 transition-colors group-hover:text-primary" />
+                <span className="sr-only">Download for Android</span>
+              </div>
+            </HoldButton>
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>Android App (Hold to download)</p>
+          </TooltipContent>
+        </Tooltip>
+      </div>
+    </TooltipProvider>
+  );
+}

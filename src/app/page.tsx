@@ -3,13 +3,16 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import ScrambleText from "@/components/cosmic/scramble-text";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { AppPlatforms } from "@/components/cosmic/app-platforms";
+import { Logo } from "@/components/cosmic/logo";
 
 export default function Home() {
   const appScreenshot = PlaceHolderImages.find(p => p.id === 'app-screenshot');
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center gap-24 overflow-hidden px-4 py-16 text-center">
-      <header>
+      <header className="flex flex-col items-center gap-4">
+        <Logo className="h-20 w-20 text-primary" />
         <h1 className="font-headline text-4xl font-bold uppercase tracking-widest sm:text-5xl">
           Class<span className="text-primary">-</span>Rep
         </h1>
@@ -30,13 +33,7 @@ export default function Home() {
           Organize your academic life. Share timetables with your entire class.
           Get rewarded. Welcome to the future of student collaboration.
         </p>
-        <Button
-          asChild
-          size="lg"
-          className="mt-4 bg-primary font-bold uppercase tracking-wider text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-none button-glow"
-        >
-          <a href="#">Download for Android</a>
-        </Button>
+        <AppPlatforms />
       </section>
 
       {appScreenshot && (
