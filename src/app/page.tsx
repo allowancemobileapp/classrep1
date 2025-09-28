@@ -4,7 +4,6 @@ import { Input } from "@/components/ui/input";
 import ScrambleText from "@/components/cosmic/scramble-text";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { AppPlatforms } from "@/components/cosmic/app-platforms";
-import { Logo } from "@/components/cosmic/logo";
 
 export default function Home() {
   const appScreenshot = PlaceHolderImages.find(p => p.id === 'app-screenshot');
@@ -12,10 +11,19 @@ export default function Home() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center gap-24 overflow-hidden px-4 py-16 text-center">
       <header className="flex flex-col items-center gap-4">
-        <Logo className="h-20 w-20 text-primary" />
-        <h1 className="font-headline text-4xl font-bold uppercase tracking-widest sm:text-5xl">
-          Class<span className="text-primary">-</span>Rep
-        </h1>
+        <Image
+            src="https://pjabgadtwtszzljyzvdt.supabase.co/storage/v1/object/public/public-downloads/app_icon_foreground.png"
+            alt="Official Logo"
+            width={80}
+            height={80}
+            className="h-20 w-20"
+        />
+        <Image
+            src="https://pjabgadtwtszzljyzvdt.supabase.co/storage/v1/object/public/public-downloads/WhatsApp_Image_2025-09-27_at_07.35.14_917f9077-removebg-preview.png"
+            alt="Official App Name"
+            width={300}
+            height={50}
+        />
       </header>
 
       <section
