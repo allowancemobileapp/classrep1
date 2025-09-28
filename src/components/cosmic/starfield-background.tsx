@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect } from "react";
@@ -15,7 +16,7 @@ const StarfieldBackground = () => {
 
   useEffect(() => {
     const newStars: JSX.Element[] = [];
-    const numStars = 200; // Adjust for more/less stars
+    const numStars = 400; // Adjust for more/less stars
     for (let i = 0; i < numStars; i++) {
       const size = Math.random() * 2 + 1;
       const style: React.CSSProperties = {

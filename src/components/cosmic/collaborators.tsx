@@ -37,7 +37,7 @@ export function Collaborators() {
       </h3>
       <div className="relative w-full overflow-hidden">
         <div className="flex w-max animate-scroll hover:[animation-play-state:paused]">
-          {[...collaborators, ...collaborators].map((collab, index) => (
+          {[...collaborators, ...collaborators, ...collaborators, ...collaborators].map((collab, index) => (
             <div
               key={`${collab.handle}-${index}`}
               className="mx-6 flex flex-col items-center gap-3 text-center"
@@ -45,9 +45,9 @@ export function Collaborators() {
               <Image
                 src={collab.imageUrl}
                 alt={collab.name}
-                width={100}
-                height={100}
-                className="h-24 w-24 rounded-md border-2 border-primary/50 object-cover"
+                width={144}
+                height={144}
+                className="h-36 w-36 rounded-md border-2 border-primary/50 object-cover"
                 data-ai-hint="person avatar"
               />
               <p className="w-32 text-base font-medium tracking-wide text-foreground/90">
