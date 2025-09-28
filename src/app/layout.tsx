@@ -17,6 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
+        <link rel="icon" href="https://pjabgadtwtszzljyzvdt.supabase.co/storage/v1/object/public/public-downloads/app_icon_foreground.png" type="image/png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
