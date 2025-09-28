@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import ScrambleText from "@/components/cosmic/scramble-text";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { AppPlatforms } from "@/components/cosmic/app-platforms";
 
@@ -35,7 +34,7 @@ export default function Home() {
           id="hero-heading"
           className="font-headline text-4xl font-bold uppercase tracking-widest text-glow sm:text-6xl md:text-7xl"
         >
-          <ScrambleText>// YOUR TIMETABLE, EVOLVED</ScrambleText>
+          // YOUR TIMETABLE, EVOLVED
         </h2>
         <p className="max-w-xl text-base text-foreground/80 sm:text-lg">
           Organize your academic life. Share timetables with your entire class.
