@@ -4,6 +4,14 @@ import { useState, useEffect } from "react";
 
 const StarfieldBackground = () => {
   const [stars, setStars] = useState<JSX.Element[]>([]);
+  const [offsetY, setOffsetY] = useState(0);
+
+  const handleScroll = () => setOffsetY(window.scrollY);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     const newStars: JSX.Element[] = [];
@@ -30,7 +38,10 @@ const StarfieldBackground = () => {
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 w-full h-screen -z-10 overflow-hidden bg-black">
+    <div 
+      className="fixed top-0 left-0 w-full h-screen -z-10 overflow-hidden bg-black"
+      style={{ transform: `translateY(${offsetY * 0.5}px)` }}
+    >
       {stars}
     </div>
   );

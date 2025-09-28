@@ -39,6 +39,14 @@ const CosmicElements = () => {
   const [floatingElements, setFloatingElements] = useState<FloatingElement[]>(
     []
   );
+  const [offsetY, setOffsetY] = useState(0);
+
+  const handleScroll = () => setOffsetY(window.scrollY);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     const newElements = elements.map((El, i) => {
@@ -58,7 +66,10 @@ const CosmicElements = () => {
   }, []);
 
   return (
-    <div className="absolute top-0 left-0 w-full h-full -z-1 pointer-events-none">
+    <div 
+      className="absolute top-0 left-0 w-full h-full -z-1 pointer-events-none"
+      style={{ transform: `translateY(${offsetY * 0.2}px)` }}
+    >
       {floatingElements.map(({ id, component, style }) => (
         <div key={id} style={style}>
           {component}
