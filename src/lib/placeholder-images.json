@@ -17,6 +17,12 @@
       "description": "App screen with a tap anywhere instruction",
       "imageUrl": "https://pjabgadtwtszzljyzvdt.supabase.co/storage/v1/object/public/public-downloads/tap_anywhere.jpg",
       "imageHint": "app tutorial screen"
+    },
+    {
+      "id": "welcome-background",
+      "description": "Background image for the welcome screen",
+      "imageUrl": "https://pjabgadtwtszzljyzvdt.supabase.co/storage/v1/object/public/public-downloads/welcome_background.png",
+      "imageHint": "cosmic space background"
     }
   ]
 }
