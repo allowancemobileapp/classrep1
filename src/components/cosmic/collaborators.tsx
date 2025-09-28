@@ -35,22 +35,29 @@ export function Collaborators() {
       >
         Official Accounts
       </h3>
-      <div className="flex flex-wrap items-start justify-center gap-8 md:gap-12">
-        {collaborators.map((collab) => (
-          <div key={collab.handle} className="flex flex-col items-center gap-3 text-center">
-            <Image
-              src={collab.imageUrl}
-              alt={collab.name}
-              width={100}
-              height={100}
-              className="h-24 w-24 rounded-full border-2 border-primary/50 object-cover"
-              data-ai-hint="person avatar"
-            />
-            <p className="text-base font-medium tracking-wide text-foreground/90">
-              {collab.handle}
-            </p>
-          </div>
-        ))}
+      <div className="relative w-full overflow-hidden">
+        <div className="flex w-max animate-scroll hover:[animation-play-state:paused]">
+          {[...collaborators, ...collaborators].map((collab, index) => (
+            <div
+              key={`${collab.handle}-${index}`}
+              className="mx-6 flex flex-col items-center gap-3 text-center"
+            >
+              <Image
+                src={collab.imageUrl}
+                alt={collab.name}
+                width={100}
+                height={100}
+                className="h-24 w-24 rounded-full border-2 border-primary/50 object-cover"
+                data-ai-hint="person avatar"
+              />
+              <p className="w-32 text-base font-medium tracking-wide text-foreground/90">
+                {collab.handle}
+              </p>
+            </div>
+          ))}
+        </div>
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background to-transparent"></div>
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background to-transparent"></div>
       </div>
     </section>
   );
