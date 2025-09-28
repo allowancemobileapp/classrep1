@@ -1,6 +1,7 @@
+
 "use client";
 
-import { Apple, Bot, Globe } from "lucide-react";
+import { Globe } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import {
   Tooltip,
@@ -11,6 +12,18 @@ import {
 import { useState, useRef, useEffect } from "react";
 import { Progress } from "@/components/ui/progress";
 import { cn } from "@/lib/utils";
+
+const AppleIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 384 512" fill="currentColor" {...props}>
+    <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C39.2 141.2 0 184.8 0 249.4c0 37.3 18.2 72.3 53.3 97.2 30.3 22.1 63.8 31.3 94.2 31.3 30.3 0 59.5-10.2 82.3-31.3 12.8-11.4 19.3-25.4 19.3-40.3.1-2.7-.1-5.4-.2-8.1zM224 435.3c33.8-21.8 63.8-49.5 77.3-81.8-13.3 10.3-29.2 15.6-45.6 15.6-34.5 0-63.8-19.7-77.3-19.7-16.2 0-35.5 13.5-45.6 19.7 20.8 45.1 52.8 71.3 96.9 81.9z" />
+  </svg>
+);
+
+const AndroidIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+    <path d="M15.5 6.5C15.5 5.67 14.83 5 14 5C13.17 5 12.5 5.67 12.5 6.5C12.5 7.33 13.17 8 14 8C14.83 8 15.5 7.33 15.5 6.5ZM10 5C9.17 5 8.5 5.67 8.5 6.5C8.5 7.33 9.17 8 10 8C10.83 8 11.5 7.33 11.5 6.5C11.5 5.67 10.83 5 10 5ZM19 12L18.14 10.28C18.35 9.94 18.5 9.56 18.5 9.16C18.5 7.64 17.36 6.5 15.84 6.5C15.44 6.5 15.06 6.65 14.72 6.86L13.84 5.16C12.95 3.45 11.13 2.5 9.16 2.5C7.19 2.5 5.37 3.45 4.48 5.16L3.6 6.86C3.26 6.65 2.88 6.5 2.48 6.5C1.03 6.5 0 7.58 0 9C0 10.15 0.69 11.11 1.64 11.55L1.5 12V17H2.5V19H4.5V17H13.5V19H15.5V17H16.5V12L16.36 11.55C17.31 11.11 18 10.15 18 9C18 8.65 17.9 8.32 17.72 8.04L17.5 8.5L16.5 10.5V12H19ZM4.5 12V10.5H13.5V12H4.5Z" />
+  </svg>
+);
 
 const HoldButton = ({
   onHold,
@@ -116,14 +129,14 @@ export function AppPlatforms() {
 
   return (
     <TooltipProvider>
-      <div className="mt-4 flex items-center justify-center gap-6">
+      <div className="mt-4 flex items-center justify-center gap-8">
         <Tooltip>
           <TooltipTrigger asChild>
             <button
               onClick={handleIosClick}
               className="group transform transition-transform hover:scale-110"
             >
-              <Apple className="h-10 w-10 text-foreground/80 transition-colors group-hover:text-primary" />
+              <AppleIcon className="h-10 w-10 text-foreground/80 transition-colors group-hover:text-primary" />
               <span className="sr-only">Download for iOS</span>
             </button>
           </TooltipTrigger>
@@ -151,7 +164,7 @@ export function AppPlatforms() {
           <TooltipTrigger asChild>
             <HoldButton onHold={handleAndroidDownload} onCancel={handleAndroidCancel}>
               <div className="group transform transition-transform hover:scale-110 cursor-pointer">
-                <Bot className="h-10 w-10 text-foreground/80 transition-colors group-hover:text-primary" />
+                <AndroidIcon className="h-10 w-10 text-foreground/80 transition-colors group-hover:text-primary" />
                 <span className="sr-only">Download for Android</span>
               </div>
             </HoldButton>
@@ -164,3 +177,5 @@ export function AppPlatforms() {
     </TooltipProvider>
   );
 }
+
+    
