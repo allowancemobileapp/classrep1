@@ -33,10 +33,10 @@ export function InteractiveScreenshot() {
         <AnimatePresence initial={false}>
           <motion.div
             key={currentIndex}
-            initial={{ scale: 1.2, opacity: 0 }}
+            initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.8, opacity: 0 }}
-            transition={{ duration: 0.4, ease: "easeInOut" }}
+            exit={{ scale: 1.2, opacity: 0 }}
+            transition={{ duration: 0.2, ease: "easeIn" }}
             className="w-full h-full"
           >
             <Image
