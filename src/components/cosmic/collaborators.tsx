@@ -47,7 +47,7 @@ export function Collaborators() {
                 alt={collab.name}
                 width={100}
                 height={100}
-                className="h-24 w-24 rounded-full border-2 border-primary/50 object-cover"
+                className="h-24 w-24 rounded-md border-2 border-primary/50 object-cover"
                 data-ai-hint="person avatar"
               />
               <p className="w-32 text-base font-medium tracking-wide text-foreground/90">
