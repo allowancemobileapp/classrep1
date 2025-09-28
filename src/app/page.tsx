@@ -6,17 +6,17 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { AppPlatforms } from "@/components/cosmic/app-platforms";
 import { InteractiveScreenshot } from "@/components/cosmic/interactive-screenshot";
-import { useState } from "react";
+import { useState, useActionState } from "react";
 import WelcomeScreen from "@/components/cosmic/welcome-screen";
 import { AnimatePresence } from "framer-motion";
 import { Collaborators } from "@/components/cosmic/collaborators";
-import { useFormState, useFormStatus } from "react-dom";
+import { useFormStatus } from "react-dom";
 import { addToWaitlist } from "./actions";
 import { useToast } from "@/hooks/use-toast";
 import { useEffect } from "react";
 
 function WaitlistForm() {
-  const [state, formAction] = useFormState(addToWaitlist, null);
+  const [state, formAction] = useActionState(addToWaitlist, null);
   const { pending } = useFormStatus();
   const { toast } = useToast();
 
