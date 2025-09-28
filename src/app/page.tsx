@@ -33,11 +33,12 @@ export default function Home() {
           id="hero-heading"
           className="font-headline text-4xl font-bold uppercase tracking-widest sm:text-6xl md:text-7xl"
         >
-          // YOUR TIMETABLE, EVOLVED
+          hurry, class don start!
         </h2>
         <p className="max-w-xl text-base text-foreground/80 sm:text-lg">
-          Organize your academic life. Share timetables with your entire class.
-          Get rewarded. Welcome to the future of student collaboration.
+          Join the class, the fun and the excitement with your friends,
+          families and colleagues. Tap and hold the icons below for 5 seconds
+          to join the class
         </p>
         <AppPlatforms />
       </section>
