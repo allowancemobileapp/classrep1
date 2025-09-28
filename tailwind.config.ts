@@ -10,8 +10,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body: ['Inter', 'sans-serif'],
-        headline: ['Inter', 'sans-serif'],
+        body: ['Chakra Petch', 'sans-serif'],
+        headline: ['Chakra Petch', 'sans-serif'],
         code: ['monospace'],
       },
       colors: {
