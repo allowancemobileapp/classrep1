@@ -1,11 +1,10 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { AppPlatforms } from "@/components/cosmic/app-platforms";
+import { InteractiveScreenshot } from "@/components/cosmic/interactive-screenshot";
 
 export default function Home() {
-  const appScreenshot = PlaceHolderImages.find(p => p.id === 'app-screenshot');
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center gap-24 overflow-hidden px-4 py-16 text-center">
@@ -32,7 +31,7 @@ export default function Home() {
       >
         <h2
           id="hero-heading"
-          className="font-headline text-4xl font-bold uppercase tracking-widest text-glow sm:text-6xl md:text-7xl"
+          className="font-headline text-4xl font-bold uppercase tracking-widest sm:text-6xl md:text-7xl"
         >
           // YOUR TIMETABLE, EVOLVED
         </h2>
@@ -43,23 +42,8 @@ export default function Home() {
         <AppPlatforms />
       </section>
 
-      {appScreenshot && (
-         <section id="screenshot" aria-label="App Screenshot">
-           <div className="rounded-2xl border border-primary/50 bg-black p-1 shadow-lg border-glow">
-             <div className="rounded-xl border-2 border-black">
-                <Image
-                    src={appScreenshot.imageUrl}
-                    alt={appScreenshot.description}
-                    width={300}
-                    height={600}
-                    className="rounded-lg"
-                    data-ai-hint={appScreenshot.imageHint}
-                />
-             </div>
-           </div>
-         </section>
-      )}
-
+      <InteractiveScreenshot />
+      
       <section
         id="waitlist"
         className="flex w-full flex-col items-center gap-6"
