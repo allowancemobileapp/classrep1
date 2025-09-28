@@ -7,6 +7,8 @@ import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const screenshotImages = [
+  "get-started",
+  "tap-anywhere",
   "screenshot-1",
   "screenshot-2",
   "screenshot-3",
@@ -47,9 +49,9 @@ export function InteractiveScreenshot() {
         <AnimatePresence initial={false}>
           <motion.div
             key={currentIndex}
-            initial={{ scale: 0.8, opacity: 0 }}
+            initial={{ scale: 1.2, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 1.2, opacity: 0 }}
+            exit={{ scale: 0.8, opacity: 0 }}
             transition={{ duration: 0.2, ease: "easeIn" }}
             className="w-full h-full"
           >
