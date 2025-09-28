@@ -33,7 +33,7 @@ export function Collaborators() {
         id="collaborators-heading"
         className="font-headline text-3xl font-bold uppercase tracking-widest sm:text-4xl"
       >
-        Official Accounts
+        Popular Accounts on Class-Rep
       </h3>
       <div className="relative w-full overflow-hidden">
         <div className="flex w-max animate-scroll hover:[animation-play-state:paused]">
