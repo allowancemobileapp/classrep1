@@ -93,10 +93,16 @@ const HoldButton = ({
 export function AppPlatforms() {
   const { toast } = useToast();
 
+  const showHoldInstruction = () => {
+    toast({
+      title: "Hold for 5 seconds to install",
+    });
+  };
+
   const handleIosClick = () => {
     toast({
       title: "Coming Soon!",
-      description: "The iOS app is under development. Stay tuned!",
+      description: "Hold for 5 seconds to install when available.",
     });
   };
 
@@ -111,13 +117,6 @@ export function AppPlatforms() {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-  };
-
-    const handleAndroidCancel = () => {
-    toast({
-      title: "Download Cancelled",
-      variant: "destructive",
-    });
   };
 
   return (
@@ -140,7 +139,7 @@ export function AppPlatforms() {
             </button>
           </TooltipTrigger>
           <TooltipContent>
-            <p>iOS App (Coming Soon)</p>
+            <p>iOS App (Hold to install)</p>
           </TooltipContent>
         </Tooltip>
 
@@ -161,7 +160,7 @@ export function AppPlatforms() {
 
         <Tooltip>
           <TooltipTrigger asChild>
-            <HoldButton onHold={handleAndroidDownload} onCancel={handleAndroidCancel}>
+            <HoldButton onHold={handleAndroidDownload} onCancel={showHoldInstruction}>
               <div className="group transform transition-transform hover:scale-110 cursor-pointer">
                 <Image 
                   src="https://pjabgadtwtszzljyzvdt.supabase.co/storage/v1/object/public/public-downloads/Android.png" 
@@ -175,7 +174,7 @@ export function AppPlatforms() {
             </HoldButton>
           </TooltipTrigger>
           <TooltipContent>
-            <p>Android App (Hold to download)</p>
+            <p>Android App (Hold to install)</p>
           </TooltipContent>
         </Tooltip>
       </div>
