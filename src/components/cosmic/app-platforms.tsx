@@ -146,7 +146,7 @@ export function AppPlatforms() {
         <Tooltip>
           <TooltipTrigger asChild>
             <a
-              href="https://classrepweb.netlify.app/"
+              href="https://classrep.netlify.app/"
               target="_blank"
               rel="noopener noreferrer"
               className="group transform transition-transform hover:scale-110"
