@@ -112,8 +112,8 @@ export function AppPlatforms() {
       description: "Hold tight, your download is starting...",
     });
     const link = document.createElement('a');
-    link.href = 'https://github.com/allowancemobileapp/classrep/releases/download/v1.0.0/Class-Rep-v2.apk';
-    link.setAttribute('download', 'Class-Rep-v2.apk');
+    link.href = 'https://github.com/allowancemobileapp/classrep/releases/download/v4.4.0/class-rep-v4.4.apk';
+    link.setAttribute('download', 'class-rep-v4.4.apk');
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
