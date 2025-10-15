@@ -15,7 +15,7 @@ const faqItems = [
   {
     question: "why isn't it on the play store or app store?? kinder weird🤨",
     answer:
-      "we couldn't raise enough capital to pay the annual app store developer fee of $100 and for some reason, google just won't verify our account on time but the team is working hard to get them on the stores for easy access hopefully before mid november",
+      "validation delays in both stores, but should be up and running latest, mid-november",
   },
   {
     question: "what's the N5h monthly sub for?👀",
