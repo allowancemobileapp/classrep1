@@ -20,7 +20,7 @@ const faqItems = [
   {
     question: "what's the N5h monthly sub for?👀",
     answer:
-      "cloud resources and profit, duhh! and we pay users who have a lot of subscribers too. dedicated users cash out with us!",
+      "cloud resources, salaries and profit, duhh! and we pay users who have a lot of subscribers too",
   },
   {
     question: "who created class-rep!?",
