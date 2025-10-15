@@ -8,17 +8,17 @@ import {
 
 const faqItems = [
   {
-    question: "wtf is class-rep!?",
+    question: "wtf is class-rep🤷‍♀️!?",
     answer:
-      "It's like a productive social media app for humans. Like if X and Instagram had a baby and it's freaking cool",
+      "It's a productive social media app for humans. Like if X and Instagram had a baby and it's freaking cool",
   },
   {
-    question: "why isn't it on the play store or app store?? kinder weird",
+    question: "why isn't it on the play store or app store?? kinder weird🤨",
     answer:
       "we couldn't raise enough capital to pay the annual app store developer fee of $100 and for some reason, google just won't verify our account on time but the team is working hard to get them on the stores for easy access hopefully before mid november",
   },
   {
-    question: "what's the N5h monthly sub for?",
+    question: "what's the N5h monthly sub for?👀",
     answer:
       "cloud resources and profit, duhh! and we pay users who have a lot of subscribers too. dedicated users cash out with us!",
   },
