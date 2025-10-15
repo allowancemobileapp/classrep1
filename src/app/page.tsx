@@ -12,6 +12,7 @@ import { Collaborators } from "@/components/cosmic/collaborators";
 import { useFormStatus } from "react-dom";
 import { addToWaitlist } from "./actions";
 import { useToast } from "@/hooks/use-toast";
+import { Faq } from "@/components/cosmic/faq";
 
 function WaitlistForm() {
   const [state, formAction] = useActionState(addToWaitlist, null);
@@ -138,6 +139,8 @@ export default function Home() {
         <Collaborators />
 
         <WaitlistForm />
+
+        <Faq />
 
         <footer className="mt-16">
           <p className="text-sm text-muted-foreground">
